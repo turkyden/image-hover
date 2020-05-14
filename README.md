@@ -1,5 +1,7 @@
 # vue-imagehover
 
+http://turkyden.github.io/vue-imagehover/
+
 ## Project setup
 ```
 npm install
