@@ -9,6 +9,7 @@
     "tailwind": "npx tailwind build src/main.css -o public/tailwind.css"
   },
   "dependencies": {
+    "@tailwindcss/ui": "^0.3.0",
     "core-js": "^3.6.4",
     "highlight.js": "^10.0.3",
     "tailwindcss": "^1.4.6",
