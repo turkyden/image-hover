@@ -1,12 +1,12 @@
 <template>
-  <div id="app" class="w-screen h-screen bg-gray-800">
+  <div id="app" class="bg-gray-800">
     <div class="container m-auto py-20">
       <h1 class="text-white text-4xl font-bold text-center">ImageHover Effects</h1>
     </div>
     <div class="container m-auto">
-      <div class="m-auto flex">
+      <div class="m-auto flex flex-wrap">
         <div 
-          class="w-1/4 text-center"
+          class="w-1/4 text-center pb-4"
           v-for="effect in Object.values(effects)"
           :key="effect.name" 
         > 
@@ -69,7 +69,7 @@ export default {
   data() {
     return { 
       effects: effects, 
-      visible: true,
+      visible: false,
       current: 'fade'
     };
   },
