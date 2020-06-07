@@ -6,7 +6,7 @@
     <div class="container m-auto">
       <div class="m-auto flex flex-wrap">
         <div 
-          class="w-1/4 text-center pb-4"
+          class="w-1/6 text-center pb-4"
           v-for="effect in Object.values(effects)"
           :key="effect.name" 
         > 
@@ -111,3 +111,23 @@ export default {
   }
 }
 </script>
+
+<style>
+/* 美化滚动条样式 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  box-shadow: transparent;
+  background-color: transparent;
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: none;
+  background-color: #ccc;
+}
+</style>

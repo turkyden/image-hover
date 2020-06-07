@@ -1,10 +1,10 @@
 <template>
-<figure>
-  <img src="https://avatars0.githubusercontent.com/u/24560160?s=460&u=7be5e44f8135ada01de8515a224fa06fca51e5ee&v=4">
-  <figcaption>
-    Hello World !
-  </figcaption>
-</figure>
+  <figure>
+    <img src="https://jdc.jd.com/img/200x200" />
+    <figcaption>
+      Hello World !
+    </figcaption>
+  </figure>
 </template>
 
 <style scoped>
@@ -48,23 +48,34 @@ figure *:after {
   transition: all 0.35s ease;
 }
 
-/** fade **/
+/** reveal **/
+figure:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-color: #135796;
+}
+
 figure figcaption {
   opacity: 0;
 }
 
-figure:hover figcaption {
-  opacity: 1;
-}
-
-figure:hover > img, figure:hover figcaption{
+figure:hover:before {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 
-/** fade-in-down **/
-figure figcaption {
-  -webkit-transform: translate(0, -15%);
-  transform: translate(0, -15%);
+figure:hover figcaption {
+  opacity: 1;
+  transition-delay: 0.21s;
+}
+
+/** reveal-top-right **/
+figure:before {
+  -webkit-transform: translate(100%, -100%);
+  transform: translate(100%, -100%);
 }
 </style>
