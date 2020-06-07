@@ -1,8 +1,8 @@
 <template>
   <figure>
-    <img src="https://jdc.jd.com/img/200x200" />
+    <img src="https://s1.ax1x.com/2020/06/07/tgh11I.png" />
     <figcaption>
-      Hello World !
+      Hi BaoShan ! 🐶
     </figcaption>
   </figure>
 </template>

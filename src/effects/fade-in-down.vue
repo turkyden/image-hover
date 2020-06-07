@@ -1,8 +1,8 @@
 <template>
 <figure>
-  <img src="https://avatars0.githubusercontent.com/u/24560160?s=460&u=7be5e44f8135ada01de8515a224fa06fca51e5ee&v=4">
+  <img src="https://s1.ax1x.com/2020/06/07/tgh11I.png">
   <figcaption>
-    Hello World !
+    Hi BaoShan ! 🐶
   </figcaption>
 </figure>
 </template>

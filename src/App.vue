@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="bg-gray-800">
     <div class="container m-auto py-20">
-      <h1 class="text-white text-4xl font-bold text-center">ImageHover Effects</h1>
+      <h1 class="text-white text-4xl font-bold text-center">ImageHover Effects 🐶</h1>
+      <h2 class="text-white text-xl text-center">
+        Inspired by 
+      </h2>
     </div>
     <div class="container m-auto">
       <div class="m-auto flex flex-wrap">
