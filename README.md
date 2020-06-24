@@ -1,6 +1,6 @@
-# vue-imagehover
+# Imagehover Effects
 
-http://turkyden.github.io/vue-imagehover/
+http://turkyden.github.io/imagehover-effects/
 
 ## Project setup
 ```
