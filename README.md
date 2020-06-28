@@ -1,6 +1,6 @@
 # Imagehover Effects
 
-[Demo &rarr;](http://turkyden.github.io/imagehover-effects/)
+A colletion of Imagehover Effects with html and css. [Demo &rarr;](http://turkyden.github.io/imagehover-effects/)
 
 ## Project setup
 
