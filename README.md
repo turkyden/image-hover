@@ -1,6 +1,8 @@
 # Imagehover Effects
 
-http://turkyden.github.io/imagehover-effects/
+A colletion of Imagehover Effects with html and css.
+
+[Preview Demo](http://turkyden.github.io/imagehover-effects/)
 
 ## Project setup
 ```
@@ -24,13 +26,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-:dog:
-
-:dog2:
-
-:poodle:
-
-:paw_prints:
-
-:hotdog:
