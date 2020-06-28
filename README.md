@@ -2,7 +2,7 @@
 
 A colletion of Imagehover Effects with html and css.
 
-[Preview Demo &rarr;](http://turkyden.github.io/imagehover-effects/)
+<a href="http://turkyden.github.io/imagehover-effects/" target="_blank">Preview Demo &rarr;</a>
 
 ## Project setup
 ```
