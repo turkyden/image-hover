@@ -9,7 +9,7 @@
     <div class="container m-auto">
       <div class="m-auto flex flex-wrap">
         <div 
-          class="w-1/6 pb-4"
+          class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 pb-4"
           v-for="effect in Object.values(effects)"
           :key="effect.name" 
         > 
@@ -20,6 +20,11 @@
         </div>
       </div>
     </div>
+    <footer>
+      <p class="text-gray-500 text-center py-20">
+        @MIT & Designed by <a class="text-green-500 hover:underline" href="https://github.com/Turkyden" target="_blank">Turkyden</a>
+      </p>
+    </footer>
     <!-- modal -->
     <transition name="fade">
       <div 
@@ -116,6 +121,7 @@ export default {
   height: 10px;
   background-color: transparent;
 }
+
 /*定义滚动条轨道 内阴影+圆角*/
 ::-webkit-scrollbar-track {
   box-shadow: transparent;
