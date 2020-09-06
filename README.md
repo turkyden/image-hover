@@ -1,6 +1,8 @@
 # Imagehover Effects
 
-A colletion of Imagehover Effects with html and css. [Demo &rarr;](http://turkyden.github.io/imagehover-effects/)
+*A Collection Of Light Image Hover CSS Effects Without Any Javascript*
+
+[Demo &rarr;](http://turkyden.github.io/imagehover-effects/)
 
 ## Effects
 
@@ -47,7 +49,3 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png)
 --- | --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | Latest ✔ | 11+ ✔ | Latest ✔ | Latest ✔ |
-
-## MIT
-
-
