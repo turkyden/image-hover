@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="bg-gray-800 w-screen h-screen overflow-x-hidden overflow-y-scroll">
-    <div class="container m-auto py-20">
+    <div class="container m-auto py-20 text-center">
       <h1 class="text-white text-4xl font-bold">ImageHover Effects 🐶</h1>
       <h2 class="text-white text-xl">
         Inspired by <a class="text-green-500 hover:underline" href="https://github.com/ciar4n/imagehover.css" target="_blank">imagehover.css</a>
@@ -9,22 +9,36 @@
     <div class="container m-auto">
       <div class="m-auto flex flex-wrap">
         <div 
-          class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 pb-4"
+          class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 pb-4 flex justify-center"
           v-for="effect in Object.values(effects)"
           :key="effect.name" 
         > 
-          <div class="cursor-pointer" v-on:click="onClickEffect(effect.name)">
+          <div>
             <component :is="effect.name"/>
-            <div class="flex justify-center items-center">
-              <p class="text-white">{{ effect.name }}</p>
-              <form class="code-box-code-action" action="https://codepen.io/pen/define" method="POST" target="_blank">
-                <input type="hidden" name="data" value="">
-                <span role="img" class="anticon code-box-codepen ant-tooltip-open">
-                  <svg viewBox="0 0 15 15" fill="currentColor">
-                    <path d="M14.777304,4.75062256 L7.77734505,0.0839936563 C7.60939924,-0.0279665065 7.39060662,-0.0279665065 7.22266081,0.0839936563 L0.222701813,4.75062256 C0.0836082937,4.84334851 5.66973453e-05,4.99945222 4.6875e-05,5.16662013 L4.6875e-05,9.83324903 C4.6875e-05,10.0004355 0.0836088906,10.1565596 0.222701812,10.2492466 L7.22266081,14.9158755 C7.30662908,14.9718752 7.403316,14.999875 7.50000292,14.999875 C7.59668984,14.999875 7.69337678,14.9718752 7.77734505,14.9158755 L14.777304,10.2492466 C14.9163976,10.1565206 14.9999492,10.0004169 14.999959,9.83324903 L14.999959,5.16662013 C14.9999492,4.99945222 14.9163976,4.84334851 14.777304,4.75062256 Z M7.50000292,9.23237755 L4.90139316,7.4999502 L7.50000292,5.76755409 L10.0986127,7.4999502 L7.50000292,9.23237755 Z M8,4.89905919 L8,1.43423573 L13.598561,5.16665138 L10.9999824,6.89904747 L8,4.89905919 Z M7.00000586,4.89905919 L4.00002344,6.89904747 L1.40141366,5.16665138 L7.00000586,1.43423573 L7.00000586,4.89905919 Z M3.09865372,7.4999502 L1.00004102,8.89903575 L1.00004102,6.10089589 L3.09865372,7.4999502 Z M4.00002344,8.10085292 L7.00000586,10.1008412 L7.00000586,13.5656334 L1.40141366,9.83328028 L4.00002344,8.10085292 Z M8,10.1008412 L10.9999824,8.10085292 L13.5985922,9.83328028 L8,13.5656647 L8,10.1008412 L8,10.1008412 Z M11.9013521,7.4999502 L13.9999648,6.10089589 L13.9999648,8.899067 L11.9013521,7.4999502 Z"></path>
+            <div class="flex justify-between items-center mb-4">
+              <p class="text-gray-300 text-sm">{{ effect.name }}</p>
+
+              <div class="w-10 flex justify-between">
+                <span role="img" class="text-gray-500 hover:text-white cursor-pointer" v-on:click="onClickCode(effect.name)">
+                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
                   </svg>
                 </span>
-              </form>
+
+                <form class="code-box-code-action" action="https://codepen.io/pen/define" method="POST" target="_blank" v-on:click="onClickCodePen(effect.name, $event)">
+                  <input type="hidden" name="data" v-bind:value="codepen">
+                  <span role="img" class="text-gray-500 hover:text-white cursor-pointer">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                      <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                      <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                      <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                      <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                    </svg>
+                  </span>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -47,15 +61,18 @@
           <div class="flex justify-between pb-2">
             <h2 class="text-xl">HTML</h2>
             <span 
-              class="cursor-pointer flex justify-center items-center"
+              class="cursor-pointer text-gray-500 hover:text-gray-300" 
+              title="copy"
               v-clipboard:copy="html"
               v-clipboard:success="onCopyHTML"
               v-clipboard:error="onError" 
-              v-tooltip="{ content: 'Copyed !', trigger: 'click', autoHide: true }"
-              >
-              <svg t="1589361244371" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7995" width="16" height="16"><path d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z" p-id="7996" fill="#ffffff"></path><path d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z" p-id="7997" fill="#ffffff"></path></svg>
-              Copy
-            </span>
+              v-tooltip="{ content: 'Copyed !', trigger: 'manual', show: shadowCopyedHTML }"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+              </svg>
+            </span> 
           </div>
           <div class="bg-gray-800">
             <pre v-highlightjs><code class="html">{{html}}</code></pre>
@@ -63,14 +80,17 @@
           <div class="flex justify-between py-2">
             <h2 class="text-xl">CSS</h2>
             <span 
-              class="cursor-pointer flex justify-center items-center"
+              class="cursor-pointer text-gray-500 hover:text-gray-300"
+              title="copy"
               v-clipboard:copy="css"
               v-clipboard:success="onCopyCSS"
               v-clipboard:error="onError" 
-              v-tooltip="{ content: 'Copyed !', trigger: 'click', hideOnTargetClick: true }"
+              v-tooltip="{ content: 'Copyed !', trigger: 'manual', show: shadowCopyedCSS }"
             >
-              <svg t="1589361244371" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7995" width="16" height="16"><path d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z" p-id="7996" fill="#ffffff"></path><path d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z" p-id="7997" fill="#ffffff"></path></svg>
-              Copy
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+              </svg>
             </span>
           </div>
           <div class="overflow-y-scroll bg-gray-800">
@@ -92,7 +112,9 @@ export default {
     return { 
       effects: effects, 
       visible: false,
-      current: 'fade'
+      current: 'fade',
+      shadowCopyedHTML: false,
+      shadowCopyedCSS: false
     };
   },
   computed: {
@@ -101,21 +123,39 @@ export default {
     },
     css: function () {
       return this.effects[this.current].css
+    }, 
+    codepen: function () {
+      return JSON.stringify({
+        editors: "110",
+        layout: "top",
+        description: "A colletion of Imagehover Effects with html and css.",
+        title: 'ImageHover Effects / ' + this.effects[this.current].name, 
+        html: this.effects[this.current].html, 
+        css: this.effects[this.current].css
+      })
     }
   },
   methods: {
-    onClickEffect: function(name) {
+    onClickCode: function(name) {
       this.visible = true;
       this.current = name;
+    }, 
+    onClickCodePen: function(name, event) {
+      this.current = name;
+      event.currentTarget.submit();
     }, 
     onCloseModel: function() {
       this.visible = false;
     }, 
     onCopyHTML: function() {
       //alert('You just copied: ' + e.text)
+      this.shadowCopyedHTML = true;
+      setTimeout(() => this.shadowCopyedHTML = false, 1000)
     },
     onCopyCSS: function() {
       //alert('You just copied: ' + e.text)
+      this.shadowCopyedCSS = true;
+      setTimeout(() => this.shadowCopyedCSS = false, 1000);
     },
     onError: function () {
       // alert('Failed to copy texts' + e.text)
