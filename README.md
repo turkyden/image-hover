@@ -2,7 +2,7 @@
 
 *A Collection Of Light Image Hover CSS Effects Without Any Javascript*
 
-[Demo &rarr;](http://turkyden.github.io/imagehover-effects/)
+[Preview in Demo &rarr;](http://turkyden.github.io/imagehover-effects/)
 
 ## Effects
 
