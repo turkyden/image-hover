@@ -1,8 +1,8 @@
 <template>
 <figure>
-  <img src="https://s1.ax1x.com/2020/06/07/tgh11I.png">
+  <img src="https://raw.githubusercontent.com/Turkyden/imagehover-effects/master/placeholder.png">
   <figcaption>
-    Hi BaoShan ! 🐶
+    Hello World ! 🐶
   </figcaption>
 </figure>
 </template>
