@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <img src="https://raw.githubusercontent.com/Turkyden/imagehover-effects/master/placeholder.png" />
+    <img src="https://gitee.com/Turkyden/image-hover/raw/master/placeholder.png" />
     <figcaption>
       Hello World ! 🐶
     </figcaption>
