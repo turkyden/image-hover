@@ -17,20 +17,19 @@
       </ul>
     </div>
     <div class="container m-auto">
-      <div class="m-auto flex flex-wrap">
+      <transition-group name="cell" tag="div"  class="m-auto flex flex-wrap">
         <div 
           class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 pb-4 flex justify-center"
           v-for="effect in Object.values(effects)"
           :key="effect.name"
           v-on:mouseover="onMouseover(effect.name)"
-          v-show="effect.name.includes(activeCategory) || activeCategory === 'all'"
         > 
           <div>
             <div class="cursor-pointer" v-on:click="onClickCode()">
               <component :is="effect.name"/>
             </div>
             <div class="flex justify-between items-center mb-4">
-              <p class="text-gray-300 text-sm">{{ effect.name }}</p>
+              <p :class="['text-sm', effect.name.includes(activeCategory) ? 'text-gray-300' : 'text-gray-600']">{{ effect.name }}</p>
 
               <div class="w-10 flex justify-between">
                 <span role="img" class="text-gray-500 hover:text-white cursor-pointer" v-on:click="onClickCode()">
@@ -56,7 +55,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </transition-group>
     </div>
     <footer class="w-full py-20">
       <div class="flex justify-center">
@@ -128,6 +127,7 @@
 </template>
 
 <script>
+import _ from "lodash";
 import { components, effects } from "@/assets/effects.js";
 import imageBaoShan from "@/assets/baoshan.png";
 
@@ -136,7 +136,7 @@ export default {
   components: { ...components },
   data() {
     return { 
-      effects: effects,
+      effects: Object.values(effects),
       visible: false,
       current: 'fade',
       shadowCopyedHTML: false,
@@ -157,25 +157,29 @@ export default {
   },
   computed: {
     html: function () {
-      return this.effects[this.current].html
+      return effects[this.current].html
     },
     css: function () {
-      return this.effects[this.current].css
+      return effects[this.current].css
     }, 
     codepen: function () {
       return JSON.stringify({
         editors: "110",
         layout: "top",
         description: "A colletion of Imagehover Effects with html and css.",
-        title: 'ImageHover Effects / ' + this.effects[this.current].name, 
-        html: this.effects[this.current].html, 
-        css: this.effects[this.current].css
+        title: 'ImageHover Effects / ' + effects[this.current].name, 
+        html: effects[this.current].html, 
+        css: effects[this.current].css
       })
     }
+  },
+  mounted: function() {
+    this.effects = _.shuffle(this.effects);
   },
   methods: {
     onClickCategory: function(id) {
       this.activeCategory = id;
+      this.effects = this.effects.sort((a, b) => b.name.includes(id) ? 1 : -1)
     },
     onMouseover: function (name) {
       this.current = name;
@@ -225,6 +229,11 @@ export default {
   box-shadow: none;
   background-color: #ccc;
 }
+
+.cell-move {
+  transition: transform 1s;
+}
+
 /** Madal Animated */
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s;

@@ -7,12 +7,15 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest build",
     "lint": "vue-cli-service lint",
-    "tailwind": "npx tailwind build src/main.css -o public/tailwind.css"
+    "tailwind": "npx tailwind build src/main.css -o public/tailwind.css",
+    "cz": "git-cz"
   },
   "dependencies": {
     "@tailwindcss/ui": "^0.3.0",
+    "commitizen": "^4.2.2",
     "core-js": "^3.6.4",
     "highlight.js": "^10.0.3",
+    "lodash": "^4.17.20",
     "tailwindcss": "^1.4.6",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
