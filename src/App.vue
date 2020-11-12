@@ -1,21 +1,34 @@
 <template>
   <div id="app" class="bg-gray-800 w-screen h-screen overflow-x-hidden overflow-y-scroll">
-    <div class="container m-auto py-20 text-center">
+    <div class="container m-auto py-10 text-center">
       <h1 class="text-white text-4xl font-bold">ImageHover Effects 🐶</h1>
       <h2 class="text-white text-xl">
         Inspired by <a class="text-green-500 hover:underline" href="https://github.com/ciar4n/imagehover.css" target="_blank">imagehover.css</a>
       </h2>
+      <ul class="flex justify-center py-10">
+        <li 
+          :class="['hover:bg-green-600 text-white py-2 px-4 cursor-pointer mx-2', category.id === activeCategory ? 'bg-green-600' : 'bg-gray-200 bg-opacity-25']" 
+          v-for="category in categorys" 
+          :key="category.id"
+          v-on:click="onClickCategory(category.id)"
+        >
+          {{ category.name }}
+        </li>
+      </ul>
     </div>
     <div class="container m-auto">
       <div class="m-auto flex flex-wrap">
         <div 
           class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 pb-4 flex justify-center"
           v-for="effect in Object.values(effects)"
-          :key="effect.name" 
-          v-on:mouseover="onMouseover(effect.name)" 
+          :key="effect.name"
+          v-on:mouseover="onMouseover(effect.name)"
+          v-show="effect.name.includes(activeCategory) || activeCategory === 'all'"
         > 
           <div>
-            <component :is="effect.name"/>
+            <div class="cursor-pointer" v-on:click="onClickCode()">
+              <component :is="effect.name"/>
+            </div>
             <div class="flex justify-between items-center mb-4">
               <p class="text-gray-300 text-sm">{{ effect.name }}</p>
 
@@ -45,8 +58,19 @@
         </div>
       </div>
     </div>
-    <footer>
-      <p class="text-gray-500 text-center py-20">
+    <footer class="w-full py-20">
+      <div class="flex justify-center">
+        <div class="flex justify-around w-64">
+          <a href="" target="_blank">
+            <img class="w-16 h-16 shadow-lg hover:shadow-2xl rounded-full border-white border" alt="Turkyden" src="https://avatars2.githubusercontent.com/u/24560160?s=400&u=a615f51b53cd57ce0cc8e8c0234c2f1618eec99b&v=4" />
+          </a>
+          <a href="" target="_blank">
+            <img class="w-16 h-16 shadow-lg hover:shadow-2xl rounded-full border-white border" alt="Tanwen" src="https://avatars3.githubusercontent.com/u/54201322?s=400&u=434d966a1ba2973796ff371704e3b5d43bd7d059&v=4" />
+          </a>
+          <img class="w-16 h-16 shadow-lg hover:shadow-2xl rounded-full border-white border" alt="Baoshan" :src="imageBaoShan" />
+        </div>
+      </div>
+      <p class="text-gray-500 text-center py-10">
         @MIT & Designed by <a class="text-green-500 hover:underline" href="https://github.com/Turkyden" target="_blank">Turkyden</a>
       </p>
     </footer>
@@ -105,17 +129,30 @@
 
 <script>
 import { components, effects } from "@/assets/effects.js";
+import imageBaoShan from "@/assets/baoshan.png";
 
 export default {
   name: 'Effects',
   components: { ...components },
   data() {
     return { 
-      effects: effects, 
+      effects: effects,
       visible: false,
       current: 'fade',
       shadowCopyedHTML: false,
-      shadowCopyedCSS: false
+      shadowCopyedCSS: false,
+      imageBaoShan: imageBaoShan,
+      activeCategory: 'all',
+      categorys: [
+        { id: 'all', name: 'All' }, 
+        { id: 'fade', name: 'Fade' }, 
+        { id: 'flip', name: 'Flip' }, 
+        { id: 'hinge', name: 'Hinge' }, 
+        { id: 'push', name: 'Push' }, 
+        { id: 'reveal', name: 'Reveal' }, 
+        { id: 'shutter', name: 'Shutter' }, 
+        { id: 'slide', name: 'Slide' }, 
+      ]
     };
   },
   computed: {
@@ -137,6 +174,9 @@ export default {
     }
   },
   methods: {
+    onClickCategory: function(id) {
+      this.activeCategory = id;
+    },
     onMouseover: function (name) {
       this.current = name;
     },
