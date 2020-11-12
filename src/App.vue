@@ -2,9 +2,9 @@
   <div id="app" class="bg-gray-800 w-screen h-screen overflow-x-hidden overflow-y-scroll">
     <div class="container m-auto py-10 text-center">
       <h1 class="text-white text-4xl font-bold">ImageHover Effects 🐶</h1>
-      <h2 class="text-white text-xl">
+      <!-- <h2 class="text-white text-xl">
         Inspired by <a class="text-green-500 hover:underline" href="https://github.com/ciar4n/imagehover.css" target="_blank">imagehover.css</a>
-      </h2>
+      </h2> -->
       <ul class="flex justify-center py-10">
         <li 
           :class="['hover:bg-green-600 text-white py-2 px-4 cursor-pointer mx-2', category.id === activeCategory ? 'bg-green-600' : 'bg-gray-200 bg-opacity-25']" 
