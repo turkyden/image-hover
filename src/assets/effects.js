@@ -15,13 +15,17 @@ for (const filename of effectList) {
     .replace(/<\/?template>/g, '') // remove template tags
     .replace(/^\\n/, '') // remove leading linebreak
     .replace(/\\n/g, '\n') // replace escape characters
-    .replace(/\\"/g, '"');
+    .replace(/\\"/g, '"')
+    .replace(/^\\r/, '')
+    .replace(/\\r/g, '\r');
 
   const css = /<style scoped>(.*?)<\/style>/g // find css between style tags
     .exec(JSON.stringify(raw))[0]
     .replace(/<\/?style(?: scoped)?>/g, '') // remove style tags
     .replace(/^\\n/, '') // remove leading linebreak
-    .replace(/\\n/g, '\n'); // replace \n with newlines
+    .replace(/\\n/g, '\n') // replace \n with newlines
+    .replace(/^\\r/, '')
+    .replace(/\\r/g, '\r');
 
   effects[name] = { name, type, html, css };
   components[name] = component;

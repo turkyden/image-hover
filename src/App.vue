@@ -12,6 +12,7 @@
           class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 pb-4 flex justify-center"
           v-for="effect in Object.values(effects)"
           :key="effect.name" 
+          v-on:mouseover="onMouseover(effect.name)" 
         > 
           <div>
             <component :is="effect.name"/>
@@ -19,14 +20,14 @@
               <p class="text-gray-300 text-sm">{{ effect.name }}</p>
 
               <div class="w-10 flex justify-between">
-                <span role="img" class="text-gray-500 hover:text-white cursor-pointer" v-on:click="onClickCode(effect.name)">
+                <span role="img" class="text-gray-500 hover:text-white cursor-pointer" v-on:click="onClickCode()">
                   <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="16 18 22 12 16 6"></polyline>
                     <polyline points="8 6 2 12 8 18"></polyline>
                   </svg>
                 </span>
 
-                <form class="code-box-code-action" action="https://codepen.io/pen/define" method="POST" target="_blank" v-on:click="onClickCodePen(effect.name, $event)">
+                <form class="code-box-code-action" action="https://codepen.io/pen/define" method="POST" target="_blank" v-on:click="onClickCodePen($event)">
                   <input type="hidden" name="data" v-bind:value="codepen">
                   <span role="img" class="text-gray-500 hover:text-white cursor-pointer">
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -136,12 +137,13 @@ export default {
     }
   },
   methods: {
-    onClickCode: function(name) {
+    onMouseover: function (name) {
+      this.current = name;
+    },
+    onClickCode: function() {
       this.visible = true;
-      this.current = name;
     }, 
-    onClickCodePen: function(name, event) {
-      this.current = name;
+    onClickCodePen: function(event) {
       event.currentTarget.submit();
     }, 
     onCloseModel: function() {
