@@ -5,6 +5,8 @@ import VueClipboard from 'vue-clipboard2'
 import VTooltip from 'v-tooltip'
 import './assets/atom-one-dark.css'
 
+import "./assets/tailwind.css"
+
 // VueClipboard
 VueClipboard.config.autoSetContainer = true // add this line
 Vue.use(VueClipboard)

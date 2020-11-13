@@ -15,7 +15,7 @@
     "core-js": "^3.6.4",
     "highlight.js": "^10.0.3",
     "lodash": "^4.17.20",
-    "tailwindcss": "^1.4.6",
+    "tailwindcss": "^1.9.6",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
     "vue-clipboard2": "^0.3.1",

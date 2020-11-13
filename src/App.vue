@@ -59,14 +59,12 @@
     </div>
     <footer class="w-full py-20">
       <div class="flex justify-center">
-        <div class="flex justify-around w-64">
-          <a href="" target="_blank">
-            <img class="w-16 h-16 shadow-lg hover:shadow-2xl rounded-full border-white border" alt="Turkyden" src="https://avatars2.githubusercontent.com/u/24560160?s=400&u=a615f51b53cd57ce0cc8e8c0234c2f1618eec99b&v=4" />
-          </a>
-          <a href="" target="_blank">
-            <img class="w-16 h-16 shadow-lg hover:shadow-2xl rounded-full border-white border" alt="Tanwen" src="https://avatars3.githubusercontent.com/u/54201322?s=400&u=434d966a1ba2973796ff371704e3b5d43bd7d059&v=4" />
-          </a>
-          <img class="w-16 h-16 shadow-lg hover:shadow-2xl rounded-full border-white border" alt="Baoshan" :src="imageBaoShan" />
+        <div class="flex justify-around items-center w-64">
+          <img class="w-12 h-12 shadow-lg hover:shadow-2xl rounded-full border-white border cursor-pointer" alt="Turkyden" :src="imageTurkyden" v-on:click="onClickAvatar('https://github.com/turkyden')" />
+          <span class="px">💗</span>
+          <img class="w-12 h-12 shadow-lg hover:shadow-2xl rounded-full border-white border cursor-pointer" alt="TanLiuLiu" :src="imageTanLiuLiu" v-on:click="onClickAvatar('https://github.com/tanwen92')" />
+          <span class="px">💗</span>
+          <img class="w-12 h-12 shadow-lg hover:shadow-2xl rounded-full border-white border cursor-pointer" alt="Baoshan" :src="imageBaoShan" v-on:click="onClickAvatar('https://github.com/baoshan')" />
         </div>
       </div>
       <p class="text-gray-500 text-center py-10">
@@ -130,6 +128,8 @@
 import _ from "lodash";
 import { components, effects } from "@/assets/effects.js";
 import imageBaoShan from "@/assets/baoshan.png";
+import imageTanLiuLiu from "@/assets/tanliuliu.jpg";
+import imageTurkyden from "@/assets/turkyden.jpg";
 
 export default {
   name: 'Effects',
@@ -142,6 +142,8 @@ export default {
       shadowCopyedHTML: false,
       shadowCopyedCSS: false,
       imageBaoShan: imageBaoShan,
+      imageTanLiuLiu: imageTanLiuLiu,
+      imageTurkyden: imageTurkyden,
       activeCategory: 'all',
       categorys: [
         { id: 'all', name: 'All' }, 
@@ -180,6 +182,9 @@ export default {
     onClickCategory: function(id) {
       this.activeCategory = id;
       this.effects = this.effects.sort((a, b) => b.name.includes(id) ? 1 : -1)
+    },
+    onClickAvatar: function(url) {
+      window.open(url);
     },
     onMouseover: function (name) {
       this.current = name;
