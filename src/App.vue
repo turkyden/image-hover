@@ -7,7 +7,7 @@
       </h2> -->
       <ul class="flex justify-center py-10">
         <li 
-          :class="['hover:bg-green-600 text-white py-2 px-4 cursor-pointer mx-2', category.id === activeCategory ? 'bg-green-600' : 'bg-gray-200 bg-opacity-25']" 
+          :class="['hover:bg-green-600 text-white py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-green-600' : 'bg-gray-200 bg-opacity-25']" 
           v-for="category in categorys" 
           :key="category.id"
           v-on:click="onClickCategory(category.id)"

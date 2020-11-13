@@ -1,10 +1,14 @@
-# Image Hover Effects
+简体中文 | [English](./README.md)
 
-*纯 CSS + HTML 实现，一组开箱即用的鼠标滑过图片效果合集。* [快速体验 &rarr;](http://turkyden.github.io/image-hover/)
+<h1 align="center">Image Hover Effects</h1>
+
+<p align="center">
+  <em>纯 CSS + HTML 实现，一组开箱即用的鼠标滑过图片效果合集。
+    <a href="http://turkyden.github.io/image-hover/">快速体验 &rarr;</a>
+  </em>
+</p>
 
 [![Image Hover Demo](./README.gif)](http://turkyden.github.io/image-hover/)
-
-简体中文 | [English](./README.md)
 
 ## 效果
 

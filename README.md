@@ -1,10 +1,14 @@
-# Image Hover Effects
+English | [简体中文](./README_cn-zh.md)
 
-*No Javascript, a lightweight CSS collection of image hover effects you've always wanted.* [Preview &rarr;](http://turkyden.github.io/image-hover/)
+<h1 align="center">Image Hover Effects</h1>
+
+<p align="center">
+  <em>No Javascript, a lightweight CSS collection of image hover effects you've always wanted.
+  <a href="http://turkyden.github.io/image-hover/">Preview &rarr;</a>
+  </em>
+</p>
 
 [![Image Hover Demo](./README.gif)](http://turkyden.github.io/image-hover/)
-
-English | [简体中文](./README_cn-zh.md)
 
 ## Effects
 
