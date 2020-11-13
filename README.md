@@ -1,6 +1,6 @@
 # Image Hover Effects
 
-*A Collection Of Light Image Hover CSS Effects Without Any Javascript* [Preview in Demo &rarr;](http://turkyden.github.io/image-hover/)
+*No Javascript, a lightweight CSS collection of image hover effects you've always wanted.* [Preview &rarr;](http://turkyden.github.io/image-hover/)
 
 [![Image Hover Demo](./README.gif)](http://turkyden.github.io/image-hover/)
 
