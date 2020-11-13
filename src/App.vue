@@ -29,7 +29,7 @@
               <component :is="effect.name"/>
             </div>
             <div class="flex justify-between items-center mb-4">
-              <p :class="['text-sm', effect.name.includes(activeCategory) ? 'text-gray-300' : 'text-gray-600']">{{ effect.name }}</p>
+              <p :class="['text-sm', effect.name.includes(activeCategory) ? 'text-gray-300 border-0 border-b-2 border-green-500 ' : 'text-gray-600']">{{ effect.name }}</p>
 
               <div class="w-10 flex justify-between">
                 <span role="img" class="text-gray-500 hover:text-white cursor-pointer" v-on:click="onClickCode()">
@@ -181,7 +181,7 @@ export default {
   methods: {
     onClickCategory: function(id) {
       this.activeCategory = id;
-      this.effects = this.effects.sort((a, b) => b.name.includes(id) ? 1 : -1)
+      this.effects = _.shuffle(this.effects).sort((a, b) => b.name.includes(id) ? 1 : -1)
     },
     onClickAvatar: function(url) {
       window.open(url);
