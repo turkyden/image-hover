@@ -1,6 +1,6 @@
 # Image Hover Effects
 
-*一组开箱即用的鼠标滑过图片效果，纯 CSS + HTML 实现。* [快速体验 &rarr;](http://turkyden.github.io/image-hover/)
+*纯 CSS + HTML 实现，一组开箱即用的鼠标滑过图片效果合集。* [快速体验 &rarr;](http://turkyden.github.io/image-hover/)
 
 [![Image Hover Demo](./README.gif)](http://turkyden.github.io/image-hover/)
 
