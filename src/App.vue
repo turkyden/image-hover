@@ -2,10 +2,14 @@
   <div id="app" class="bg-gray-800 w-screen h-screen overflow-x-hidden overflow-y-scroll">
     <div class="container m-auto py-10 text-center">
       <h1 class="text-white text-4xl font-bold">ImageHover Effects 🐶</h1>
-      <!-- <h2 class="text-white text-xl">
-        Inspired by <a class="text-green-500 hover:underline" href="https://github.com/ciar4n/imagehover.css" target="_blank">imagehover.css</a>
-      </h2> -->
-      <ul class="flex justify-center py-10">
+      <div class="flex justify-center items-center py-8">
+        <!-- Inspired by <a class="text-green-500 hover:underline" href="https://github.com/ciar4n/imagehover.css" target="_blank">imagehover.css</a> -->
+        <p class="text-gray-300"><del>No Javascript</del>, a lightweight CSS collection of image hover effects you've always wanted.</p>
+        <a class="pl-2 cursor-pointer" href="https://github.com/Turkyden/image-hover" target="_balnk">
+          <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Turkyden/image-hover?style=social">
+        </a>
+      </div>
+      <ul class="flex justify-center">
         <li 
           :class="['hover:bg-green-600 text-white py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-green-600' : 'bg-gray-200 bg-opacity-25']" 
           v-for="category in categorys" 
