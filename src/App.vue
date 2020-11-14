@@ -83,7 +83,7 @@
         v-bind:style="{ backgroundColor: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(3px)' }" 
         v-on:click.self="onCloseModel"
       >
-        <div class="p-4 bg-gray-800 text-white rounded shadow" style="width: 600px">
+        <div class="p-4 bg-gray-800 text-white rounded shadow" style="width: 800px">
           <div class="flex justify-between pb-2">
             <h2 class="text-xl">HTML</h2>
             <span 

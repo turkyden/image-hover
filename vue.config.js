@@ -5,6 +5,6 @@ module.exports = {
     }
   },
   publicPath: process.env.NODE_ENV === 'production'
-  ? '/image-hover/'
+  ? 'https://cdn.jsdelivr.net/gh/turkyden/image-hover@gh-pages/'
   : '/'
 }

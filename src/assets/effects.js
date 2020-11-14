@@ -23,7 +23,8 @@ for (const filename of effectList) {
     .exec(JSON.stringify(raw))[0]
     .replace(/<\/?style(?: scoped)?>/g, '') // remove style tags
     .replace(/^\\n/, '') // remove leading linebreak
-    .replace(/\\n/g, '\n') // replace \n with newlines
+    .replace(/\\n/g, '\n') // replace escape characters
+    .replace(/\\"/g, '"')
     .replace(/^\\r/, '')
     .replace(/\\r/g, '\r');
 

@@ -1,6 +1,6 @@
 <template>
 <figure>
-  <img src="https://gitee.com/Turkyden/image-hover/raw/master/placeholder.png">
+  <img src="https://cdn.jsdelivr.net/gh/turkyden/image-hover/placeholder.png">
   <figcaption>
     Hello World ! 🐶
   </figcaption>
