@@ -9,6 +9,7 @@ English | [简体中文](./README_cn-zh.md)
 </p>
 
 <p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/Turkyden/image-hover">
   <a target="_blank" href="https://github.com/Turkyden/image-hover/actions"><img src="https://github.com/Turkyden/image-hover/workflows/build-and-deploy/badge.svg" ></a>
 </p>
 
