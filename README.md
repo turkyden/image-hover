@@ -3,7 +3,7 @@ English | [简体中文](./README_cn-zh.md)
 <h1 align="center">Image Hover Effects</h1>
 
 <p align="center">
-  <em>No Javascript, a lightweight CSS collection of image hover effects you've always wanted.
+  <em><del>No Javascript</del>, a lightweight CSS collection of image hover effects you've always wanted.
   <a href="http://turkyden.github.io/image-hover/">Preview &rarr;</a>
   </em>
 </p>
