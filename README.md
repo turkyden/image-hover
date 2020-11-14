@@ -8,6 +8,10 @@ English | [简体中文](./README_cn-zh.md)
   </em>
 </p>
 
+<p align="center">
+  <a target="_blank" href="https://github.com/Turkyden/image-hover/actions"><img src="https://github.com/Turkyden/image-hover/workflows/build-and-deploy/badge.svg" ></a>
+</p>
+
 [![Image Hover Demo](./README.gif)](http://turkyden.github.io/image-hover/)
 
 ## Effects
