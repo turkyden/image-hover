@@ -8,7 +8,7 @@
   </em>
 </p>
 
-[![Image Hover Demo](./README.gif)](http://turkyden.github.io/image-hover/)
+[![Image Hover Demo](https://cdn.jsdelivr.net/gh/turkyden/image-hover/README.gif)](http://turkyden.github.io/image-hover/)
 
 ## 效果
 
