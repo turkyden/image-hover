@@ -63,4 +63,4 @@ Latest ✔ | Latest ✔ | Latest ✔ | 11+ ✔ | Latest ✔ | Latest ✔ |
 
 ## LICENSE
 
-MIT
+MIT & Inspired by [imagehover.css](https://github.com/ciar4n/imagehover.css)

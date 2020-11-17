@@ -58,4 +58,4 @@ Latest ✔ | Latest ✔ | Latest ✔ | 11+ ✔ | Latest ✔ | Latest ✔ |
 
 ## 版权
 
-MIT
+MIT & Inspired by [imagehover.css](https://github.com/ciar4n/imagehover.css)

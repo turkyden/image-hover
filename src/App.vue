@@ -80,7 +80,7 @@
         </div>
       </div>
       <p class="text-gray-500 text-center py-10">
-        @MIT & Designed by <a class="text-green-500 hover:underline" href="https://github.com/Turkyden" target="_blank">Turkyden</a>
+        @MIT Inspired by <a target="_blank" href="https://github.com/ciar4n/imagehover.css" class="text-green-500 hover:underline">imagehover.css</a> & Designed by <a class="text-green-500 hover:underline" href="https://github.com/Turkyden" target="_blank">Turkyden</a>
       </p>
     </footer>
     <!-- modal -->
