@@ -4,7 +4,7 @@
       <h1 class="text-white text-4xl font-bold">ImageHover Effects 🐶</h1>
       <div class="flex justify-center items-center py-8">
         <!-- Inspired by <a class="text-green-500 hover:underline" href="https://github.com/ciar4n/imagehover.css" target="_blank">imagehover.css</a> -->
-        <p class="text-gray-300"><del>No Javascript</del>, a lightweight CSS collection of image hover effects you've always wanted.</p>
+        <p class="text-gray-300"><del class="text-green-500">No Javascript</del>, a lightweight CSS collection of image hover effects you've always wanted.</p>
         <a class="pl-2 cursor-pointer" href="https://github.com/Turkyden/image-hover" target="_balnk">
           <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Turkyden/image-hover?style=social">
         </a>
@@ -37,9 +37,8 @@
 
               <div class="w-10 flex justify-between">
                 <span role="img" class="text-gray-500 hover:text-white cursor-pointer" v-on:click="onClickCode()">
-                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </span>
 
@@ -64,11 +63,20 @@
     <footer class="w-full py-20">
       <div class="flex justify-center">
         <div class="flex justify-around items-center w-64">
-          <img class="w-12 h-12 shadow-lg hover:shadow-2xl rounded-full border-white border cursor-pointer" alt="Turkyden" :src="imageTurkyden" v-on:click="onClickAvatar('https://github.com/turkyden')" />
+          <div class="flex flex-col justify-around items-center">
+            <img class="w-12 h-12 shadow-lg rounded-full border-gray-500 border cursor-pointer" alt="Turkyden" :src="imageTurkyden" v-on:click="onClickAvatar('https://github.com/turkyden')" />
+            <p class="text-gray-500 text-xs pt-2">Me</p>
+          </div>
           <span class="px">💗</span>
-          <img class="w-12 h-12 shadow-lg hover:shadow-2xl rounded-full border-white border cursor-pointer" alt="TanLiuLiu" :src="imageTanLiuLiu" v-on:click="onClickAvatar('https://github.com/tanwen92')" />
+          <div class="flex flex-col justify-around items-center">
+            <img class="w-16 h-16 shadow-lg rounded-full border-gray-500 border cursor-pointer" alt="TanLiuLiu" :src="imageTanLiuLiu" v-on:click="onClickAvatar('https://github.com/tanwen92')" />
+            <p class="text-gray-500 text-xs pt-2">My Girl</p>
+          </div> 
           <span class="px">💗</span>
-          <img class="w-12 h-12 shadow-lg hover:shadow-2xl rounded-full border-white border cursor-pointer" alt="Baoshan" :src="imageBaoShan" v-on:click="onClickAvatar('https://github.com/baoshan')" />
+          <div class="flex flex-col justify-around items-center">
+            <img class="w-12 h-12 shadow-lg rounded-full border-gray-500 border cursor-pointer" alt="Baoshan" :src="imageBaoShan" v-on:click="onClickAvatar('https://github.com/baoshan')" />
+            <p class="text-gray-500 text-xs pt-2">My Dog</p>
+          </div> 
         </div>
       </div>
       <p class="text-gray-500 text-center py-10">
@@ -131,7 +139,7 @@
 <script>
 import _ from "lodash";
 import { components, effects } from "@/assets/effects.js";
-import imageBaoShan from "@/assets/baoshan.png";
+import imageBaoShan from "@/assets/baoshan.jpg";
 import imageTanLiuLiu from "@/assets/tanliuliu.jpg";
 import imageTurkyden from "@/assets/turkyden.jpg";
 
