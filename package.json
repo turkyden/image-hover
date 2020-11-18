@@ -1,6 +1,6 @@
 {
   "name": "image-hover",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build --dest build",
