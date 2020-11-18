@@ -3,12 +3,25 @@
 <h1 align="center">Image Hover Effects</h1>
 
 <p align="center">
-  <em>纯 CSS + HTML 实现，一组开箱即用的鼠标滑过图片效果合集。
+  <em>无需 Javascript，一套你一直想要即贴即用的鼠标滑过图片效果。
     <a href="http://turkyden.github.io/image-hover/">快速体验 &rarr;</a>
   </em>
 </p>
 
-[![Image Hover Demo](https://cdn.jsdelivr.net/gh/turkyden/image-hover/README.gif)](http://turkyden.github.io/image-hover/)
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/Turkyden/image-hover">
+  <a target="_blank" href="https://www.jsdelivr.com/package/npm/image-hover">
+    <img src="https://data.jsdelivr.com/v1/package/npm/image-hover/badge?style=rounded">
+  </a>
+  <a target="_blank" href="https://github.com/Turkyden/image-hover/actions"><img src="https://github.com/Turkyden/image-hover/workflows/build-and-deploy/badge.svg" ></a>
+</p>
+
+
+<p align="center">
+  <a target="_blank" href="http://turkyden.github.io/image-hover/">
+    <img alt="Image Hover Demo" src="https://cdn.jsdelivr.net/gh/turkyden/image-hover/README.gif">
+  </a>
+</p>
 
 ## 效果
 
