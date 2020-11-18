@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <img src="https://cdn.jsdelivr.net/gh/turkyden/image-hover/image.png" />
+    <img src="https://cdn.jsdelivr.net/npm/image-hover/image.png" />
     <figcaption>
       Hello World ! 🐶
     </figcaption>
