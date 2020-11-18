@@ -13,7 +13,7 @@
       </div>
       <ul class="flex justify-center">
         <li 
-          :class="['hover:bg-brand hover:text-on-brand transition-all ease-in-out delay-500 py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-brand text-on-brand' : '']" 
+          :class="['hover:bg-brand hover:text-on-brand py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-brand text-on-brand' : '']" 
           v-for="category in categorys" 
           :key="category.id"
           v-on:click="onClickCategory(category.id)"
