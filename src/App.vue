@@ -1,17 +1,19 @@
 <template>
-  <div id="app" class="bg-gray-800 w-screen h-screen overflow-x-hidden overflow-y-scroll">
-    <div class="container m-auto py-10 text-center">
+  <div id="app" class="w-screen h-screen overflow-x-hidden overflow-y-scroll">
+    <div class="container m-auto flex justify-end items-center pt-5">
+      <toggle-button :value="isDarkMode" @change="onChangeTheme()" color="#38a169" :labels="{ checked: '🌜', unchecked: '🌞' }" :sync="true" :height="28" :width="56" :font-size="16" />
+    </div>
+    <div class="container m-auto pb-10 text-center">
       <h1 class="text-white text-4xl font-bold">ImageHover Effects 🐶</h1>
       <div class="flex justify-center items-center py-8">
-        <!-- Inspired by <a class="text-green-500 hover:underline" href="https://github.com/ciar4n/imagehover.css" target="_blank">imagehover.css</a> -->
-        <p class="text-gray-300"><del class="text-green-500">No Javascript</del>, a lightweight CSS collection of image hover effects you've always wanted.</p>
+        <p class="text-gray-300"><del class="text-brand">No Javascript</del>, a lightweight CSS collection of image hover effects you've always wanted.</p>
         <a class="pl-2 cursor-pointer" href="https://github.com/Turkyden/image-hover" target="_balnk">
           <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Turkyden/image-hover?style=social">
         </a>
       </div>
       <ul class="flex justify-center">
         <li 
-          :class="['hover:bg-green-600 text-white py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-green-600' : 'bg-gray-200 bg-opacity-25']" 
+          :class="['hover:bg-brand text-white py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-brand' : 'bg-background']" 
           v-for="category in categorys" 
           :key="category.id"
           v-on:click="onClickCategory(category.id)"
@@ -33,7 +35,7 @@
               <component :is="effect.name"/>
             </div>
             <div class="flex justify-between items-center mb-4">
-              <p :class="['text-sm', effect.name.includes(activeCategory) ? 'text-gray-300 border-0 border-b-2 border-green-500 ' : 'text-gray-600']">{{ effect.name }}</p>
+              <p :class="['text-sm', effect.name.includes(activeCategory) ? 'text-gray-300 border-0 border-b-2 border-brand ' : 'text-gray-600']">{{ effect.name }}</p>
 
               <div class="w-10 flex justify-between">
                 <span role="img" class="text-gray-500 hover:text-white cursor-pointer" v-on:click="onClickCode()">
@@ -80,7 +82,8 @@
         </div>
       </div>
       <p class="text-gray-500 text-center py-10">
-        @MIT Inspired by <a target="_blank" href="https://github.com/ciar4n/imagehover.css" class="text-green-500 hover:underline">imagehover.css</a> & Designed by <a class="text-green-500 hover:underline" href="https://github.com/Turkyden" target="_blank">Turkyden</a>
+        @MIT Inspired by <a target="_blank" href="https://github.com/ciar4n/imagehover.css" class="text-brand hover:underline">imagehover.css</a> 
+        & Designed by <a class="text-brand hover:underline" href="https://github.com/Turkyden" target="_blank">Turkyden</a>
       </p>
     </footer>
     <!-- modal -->
@@ -148,6 +151,7 @@ export default {
   components: { ...components },
   data() {
     return { 
+      isDarkMode: true,
       effects: Object.values(effects),
       visible: false,
       current: 'fade',
@@ -191,6 +195,10 @@ export default {
     this.effects = _.shuffle(this.effects);
   },
   methods: {
+    onChangeTheme: function() {
+      this.isDarkMode = !this.isDarkMode;
+      document.body.dataset.theme = this.isDarkMode ? "dark" : "light";
+    },
     onClickCategory: function(id) {
       this.activeCategory = id;
       this.effects = _.shuffle(this.effects).sort((a, b) => b.name.includes(id) ? 1 : -1)
@@ -227,7 +235,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* 美化滚动条样式 */
 ::-webkit-scrollbar {
   width: 10px;
@@ -247,6 +255,10 @@ export default {
   background-color: #ccc;
 }
 
+.hljs {
+  background-color: #283140;
+}
+
 .cell-move {
   transition: transform 1s;
 }
@@ -258,6 +270,9 @@ export default {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+</style>
+
+<style>
 /** Tooltip Styles */
 .tooltip {
   display: block !important;

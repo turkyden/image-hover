@@ -740,6 +740,11 @@
   resolved "https://registry.npmjs.org/@commitlint/types/-/types-11.0.0.tgz#719cf05fcc1abb6533610a2e0f5dd1e61eac14fe"
   integrity sha512-VoNqai1vR5anRF5Tuh/+SWDFk7xi7oMwHrHrbm1BprYXjB2RJsWLhUrStMssDxEl5lW/z3EUdg8RvH/IUBccSQ==
 
+"@ctrl/tinycolor@^2.5.3":
+  version "2.6.1"
+  resolved "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-2.6.1.tgz#0e78cc836a1fd997a9a22fa1c26c555411882160"
+  integrity sha512-xKN3lAA+xbNhP+JX3sLhzA65IGiKqun/Yf9jBlZX7Og0SxlCrrqKxqTd6ccn20fv3Cgcvq6KnjPhnmS+v7uAwQ==
+
 "@fullhuman/postcss-purgecss@^2.1.2":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.2.0.tgz#2b3699287163ff515f25ccdae5b96a244eebb41a"
@@ -6923,6 +6928,14 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
+tailwindcss-theming@^3.0.0-beta.1:
+  version "3.0.0-beta.1"
+  resolved "https://registry.npmjs.org/tailwindcss-theming/-/tailwindcss-theming-3.0.0-beta.1.tgz#4d3fb0b2bb27e1ffe1129c5df9379aed81a6db37"
+  integrity sha512-CVYveuKeM/lQVcfb6tDLCBy84c95zD31VSAaQwZlloViIh8DG2tVAqwyYuhdZXRLahbb68+QN/aJ5e8cnrz/Aw==
+  dependencies:
+    "@ctrl/tinycolor" "^2.5.3"
+    lodash "^4.17.15"
+
 tailwindcss@^1.9.6:
   version "1.9.6"
   resolved "https://registry.npm.taobao.org/tailwindcss/download/tailwindcss-1.9.6.tgz#0c5089911d24e1e98e592a31bfdb3d8f34ecf1a0"
@@ -7387,6 +7400,11 @@ vue-highlightjs@^1.3.3:
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
+
+vue-js-toggle-button@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.npmjs.org/vue-js-toggle-button/-/vue-js-toggle-button-1.3.3.tgz#d603089039e41d45e607355ad2e0478c6a52aceb"
+  integrity sha512-0b920oztgK+1SqlYF26MPiT28hAieL5aAQE7u21XEym5ryfzD4EMer4hLkgDC/1sWsCHb22GvV+t1Kb4AI6QFw==
 
 vue-loader@^15.9.1:
   version "15.9.2"
