@@ -13,7 +13,7 @@
       </div>
       <ul class="flex justify-center">
         <li 
-          :class="['hover:bg-brand text-white py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-brand' : 'bg-background']" 
+          :class="['hover:bg-brand hover:text-on-brand transition-all ease-in-out delay-500 py-2 px-4 cursor-pointer mx-2 rounded-full', category.id === activeCategory ? 'bg-brand text-on-brand' : '']" 
           v-for="category in categorys" 
           :key="category.id"
           v-on:click="onClickCategory(category.id)"
@@ -94,7 +94,7 @@
         v-bind:style="{ backgroundColor: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(3px)' }" 
         v-on:click.self="onCloseModel"
       >
-        <div class="p-4 bg-gray-800 text-white rounded shadow" style="width: 800px">
+        <div class="p-4 bg-highlightjs text-on-highlightjs rounded shadow" style="width: 800px">
           <div class="flex justify-between pb-2">
             <h2 class="text-xl">HTML</h2>
             <span 

@@ -9,7 +9,9 @@ const base = new Theme()
     brand: '#48bb78',             // Your brand color
     'on-brand': '#ffffff',        // For everything that goes on your brand color
     background: '#f7fafc',        // A background color
-    'on-background': '#1a202c'    // For everything that goes on your background color
+    'on-background': '#1a202c',    // For everything that goes on your background color
+    highlightjs: '#2d3748',
+    'on-highlightjs': '#d5d8da',
   });
 
 const dark = new Theme()
@@ -19,7 +21,9 @@ const dark = new Theme()
     brand: '#48bb78',             // Your brand color
     'on-brand': '#ffffff',        // For everything that goes on your brand color
     background: '#2d3748',        // A background color
-    'on-background': '#d5d8da'    // For everything that goes on your background color
+    'on-background': '#d5d8da',    // For everything that goes on your background color
+    highlightjs: '#2d3748',
+    'on-highlightjs': '#d5d8da'
   });
 
 module.exports = new ThemeManager()
