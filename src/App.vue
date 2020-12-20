@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="w-screen h-screen overflow-x-hidden overflow-y-scroll">
+  <div id="app" v-show="imgLoaded" class="w-screen h-screen overflow-x-hidden overflow-y-scroll">
     <div class="container m-auto flex justify-end items-center pt-5">
       <toggle-button :value="isDarkMode" @change="onChangeTheme()" color="#38a169" :labels="{ checked: '🌜', unchecked: '🌞' }" :sync="true" :height="28" :width="56" :font-size="16" />
     </div>
@@ -91,9 +91,10 @@
       <div 
         v-if="visible" 
         class="fixed w-full h-full top-0 bottom-0 flex flex-col items-center py-10 overflow-x-hidden overflow-y-scroll filter-node" 
-        v-bind:style="{ backgroundColor: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(3px)' }" 
+        v-bind:style="{ backgroundColor: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(10px)' }" 
         v-on:click.self="onCloseModel"
       >
+        <h2 class="pb-2 text-3xl">✨ {{current}}</h2>
         <div class="p-4 bg-highlightjs text-on-highlightjs rounded shadow" style="width: 800px">
           <div class="flex justify-between pb-2">
             <h2 class="text-xl">HTML</h2>
@@ -151,6 +152,7 @@ export default {
   components: { ...components },
   data() {
     return { 
+      imgLoaded: false,
       isDarkMode: true,
       effects: Object.values(effects),
       visible: false,
@@ -192,7 +194,12 @@ export default {
     }
   },
   mounted: function() {
-    this.effects = _.shuffle(this.effects);
+    const img = new Image();
+    img.src = "https://cdn.jsdelivr.net/npm/image-hover/placeholder.png";
+    img.onload = () => {
+      this.imgLoaded = true;
+      this.effects = _.shuffle(this.effects);
+    };
   },
   methods: {
     onChangeTheme: function() {
