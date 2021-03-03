@@ -12,7 +12,7 @@
     "@tailwindcss/ui": "^0.3.0",
     "commitizen": "^4.2.2",
     "core-js": "^3.6.4",
-    "highlight.js": "^10.0.3",
+    "highlight.js": "^10.4.1",
     "lodash": "^4.17.20",
     "tailwindcss": "^1.9.6",
     "tailwindcss-theming": "^3.0.0-beta.1",
