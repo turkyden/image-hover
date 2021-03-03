@@ -3,10 +3,10 @@ name: Publish Package & Github Pages When Push Master
 on:
   pull_request:
     branches:
-      - main
+      - master
   push:
     branches:
-      - main
+      - master
 
 jobs:
   test:
@@ -35,7 +35,7 @@ jobs:
   #         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   deploy-ghpages:
-    needs: publish-npm
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
